@@ -13,7 +13,337 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <style>
+        /* Estilos base del CSS original */
+        * {
+            font-family: 'Roboto', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #photo {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgb(151 156 165 / 0.89);
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        footer p {
+            text-align: right;
+            font-style: italic;
+        }
+
+        nav > ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        section {
+            border: 0.2pt solid #cedddd;
+            margin: 4px 2px 8px 2px;
+            padding: 1.5% 0.8%;
+            margin-bottom: 1.2rem;
+            border-radius: 5px;
+            box-shadow: 3px 3px 1px 0px rgba(235, 234, 234, 0.60);
+        }
+
+        section > form {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 1rem;
+            column-gap: 1rem;
+        }
+
+        #referencias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        #referencias > h2 {
+            flex: 0 0 100%;
+        }
+
+        #referencias > article {
+            flex: 1 1 calc(33.333% - 1rem);
+        }
+
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #ffffff;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #e9ecef;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-top: 1rem;
+        }
+
+        a {
+            color: #3498db;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table thead {
+            background-color: #f2f2f2;
+        }
+
+        form label {
+            font-weight: 500;
+            display: block;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        form fieldset {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #2980b9;
+        }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        figure {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 2px solid #cedddd;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        /* Estilos para los proyectos en grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 1.2rem;
+        }
+
+        .project-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .project-subtitle {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin: 0 0 1rem 0;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -40,7 +370,6 @@
             <li><a href="#habilidades">Habilidades</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#referencias">Referencias</a></li>
-            <li><a href="#multimedia">Multimedia</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -60,8 +389,8 @@
             <article>
                 <h3>Desarrollador Web - Dox</h3>
                 <p>
-                    Desarrollo de sistemas en ERPNext con Docker y Node.js. Participé en proyectos como “Chicago”,
-                    “Florencia” y “Miami”, enfocados en automatización de facturación, correo electrónico y dashboards
+                    Desarrollo de sistemas en ERPNext con Docker y Node.js. Participé en proyectos como "Chicago",
+                    "Florencia" y "Miami", enfocados en automatización de facturación, correo electrónico y dashboards
                     administrativos.
                 </p>
             </article>
@@ -99,17 +428,141 @@
         </section>
 
         <section id="proyectos">
-            <h2 class="subtitle">Proyectos</h2>
+            <h2 class="subtitle">Proyectos Destacados</h2>
+            
+            <div class="projects-grid">
+                <!-- Proyecto 1: NexoLegal -->
+                <article class="project-card">
+                    <a href="https://www.nexolegal.org" target="_blank">
+                        <img src="https://raw.githubusercontent.com/MarSalvatore28/MarSalvatore28/main/img/nexolegal.png" 
+                             alt="NexoLegal Preview" 
+                             class="project-image">
+                    </a>
+                    <div class="project-content">
+                        <h3 class="project-title">⚖️ NexoLegal</h3>
+                        <p class="project-subtitle">Plataforma Legal Profesional</p>
+                        <p class="project-description">
+                            Sitio web profesional que presenta servicios legales, información de contacto y casos destacados. 
+                            Diseño elegante y responsivo enfocado en la experiencia del usuario.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.nexolegal.org" target="_blank" class="btn-link">Ver Sitio</a>
+                            <a href="https://github.com/MarSalvatore28/NexoLegal" target="_blank" class="btn-link btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: TonerExpress -->
+                <article class="project-card">
+                    <a href="https://tonerexpress-ec.com" target="_blank">
+                        <img src="https://raw.githubusercontent.com/MarSalvatore28/MarSalvatore28/main/img/tonerexpress.png" 
+                             alt="TonerExpress Preview" 
+                             class="project-image">
+                    </a>
+                    <div class="project-content">
+                        <h3 class="project-title">🖨️ TonerExpress</h3>
+                        <p class="project-subtitle">E-commerce Completo</p>
+                        <p class="project-description">
+                            Tienda en línea con carrito de compras, sistema de pagos integrado y gestión dinámica de productos. 
+                            Panel administrativo con gestión de inventario en tiempo real.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://tonerexpress-ec.com" target="_blank" class="btn-link">Ver Sitio</a>
+                            <a href="https://github.com/MarSalvatore28/alpha_Florencia" target="_blank" class="btn-link btn-secondary">Frontend</a>
+                            <a href="https://github.com/MarSalvatore28/BackToner" target="_blank" class="btn-link btn-secondary">Backend</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3: ERPNext SRI -->
+                <article class="project-card">
+                    <a href="https://github.com/MarSalvatore28/ErpSRI" target="_blank">
+                        <img src="https://raw.githubusercontent.com/MarSalvatore28/MarSalvatore28/main/img/erp.png" 
+                             alt="ERP Preview" 
+                             class="project-image">
+                    </a>
+                    <div class="project-content">
+                        <h3 class="project-title">💼 ERPNext SRI</h3>
+                        <p class="project-subtitle">Sistema ERP Empresarial</p>
+                        <p class="project-description">
+                            Sistema ERP completo con facturación electrónica enlazado al SRI de Ecuador. 
+                            Gestión de inventarios, clientes, proveedores y reportería avanzada para empresas.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Frappe</span>
+                            <span class="tech-badge">ERPNext</span>
+                            <span class="tech-badge">MariaDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MarSalvatore28/ErpSRI" target="_blank" class="btn-link">Ver Repositorio</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 4: AI Automation Hub -->
+                <article class="project-card">
+                    <a href="https://github.com/MarSalvatore28/automataSalvatore-s.git" target="_blank">
+                        <img src="https://raw.githubusercontent.com/MarSalvatore28/MarSalvatore28/main/img/automata.png" 
+                             alt="Automation Preview" 
+                             class="project-image">
+                    </a>
+                    <div class="project-content">
+                        <h3 class="project-title">🤖 AI Automation Hub</h3>
+                        <p class="project-subtitle">Chatbots & Automatización</p>
+                        <p class="project-description">
+                            Backend robusto para e-commerce y automatizaciones empresariales. 
+                            Integra chatbots inteligentes, flujos con n8n y capacidades de IA con OpenAI para procesos automatizados.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">n8n</span>
+                            <span class="tech-badge">OpenAI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MarSalvatore28/automataSalvatore-s.git" target="_blank" class="btn-link">Ver Repositorio</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem;">
+                Visita mi perfil profesional en
+                <a href="https://github.com/MarSalvatore28" target="_blank">GitHub</a> para ver más proyectos.
+            </p>
+
+            <hr style="margin: 2.5rem 0; border: none; border-top: 2px solid #e9ecef;">
+
+            <article style="margin-top: 2rem;">
+                <h3>📹 Presentación Personal</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 2rem;">
+                    <iframe src="https://www.youtube.com/embed/rmGXY5rcObA" title="Video de presentación personal"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        style="position:absolute; top:0; left:0; width:100%; height:100%;">
+                    </iframe>
+                </div>
+            </article>
+
             <article>
-                <h3>ERPNext Customization</h3>
-                <p>
-                    Proyecto de modificación de facturación, frontend y backend de ERPNext utilizando Docker.
-                    Implementación de APIs y dashboards administrativos personalizados.
-                </p>
-                <p>
-                    Visita mi perfil profesional en
-                    <a href="https://github.com/MarSalvatore28" target="_blank">GitHub</a> para ver más proyectos.
-                </p>
+                <h3>📍 Ubicación - ESPOL</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.845992004757!2d-79.96257437080361!3d-2.1461794658972447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72c1c6b3d457%3A0x7d20ee36b3b3e61b!2sESPOL!5e0!3m2!1ses!2sec!4v1696532345678!5m2!1ses!2sec"
+                    width="600" height="350" style="border:0; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </article>
         </section>
 
@@ -119,8 +572,8 @@
             <article>
                 <figure>
                     <blockquote>
-                        “Marlo demostró gran capacidad para resolver problemas complejos en tiempo récord. Su compromiso
-                        profesional fue clave para el éxito del proyecto.”
+                        "Marlo demostró gran capacidad para resolver problemas complejos en tiempo récord. Su compromiso
+                        profesional fue clave para el éxito del proyecto."
                     </blockquote>
                     <figcaption>
                         — <strong>Andrea Paredes</strong>, <em>Gerente de Proyecto en Dox</em>
@@ -131,7 +584,7 @@
             <article>
                 <figure>
                     <blockquote>
-                        “Trabajar con Marlo fue excelente. Domina tanto backend como frontend con precisión técnica.”
+                        "Trabajar con Marlo fue excelente. Domina tanto backend como frontend con precisión técnica."
                     </blockquote>
                     <figcaption>
                         — <strong>Diego Morales</strong>, <em>Líder Técnico en Chicago Project</em>
@@ -142,8 +595,8 @@
             <article>
                 <figure>
                     <blockquote>
-                        “Su creatividad y disciplina marcaron la diferencia en nuestra plataforma. Siempre aporta
-                        soluciones prácticas y eficientes.”
+                        "Su creatividad y disciplina marcaron la diferencia en nuestra plataforma. Siempre aporta
+                        soluciones prácticas y eficientes."
                     </blockquote>
                     <figcaption>
                         — <strong>Camila Torres</strong>, <em>Coordinadora de Innovación en Florencia Systems</em>
@@ -177,37 +630,6 @@
                     </tr>
                 </tbody>
             </table>
-        </section>
-
-        <section id="multimedia">
-            <h2 class="subtitle">Multimedia</h2>
-
-            <figure>
-                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=60"
-                    alt="Imagen de tecnología moderna en un entorno de desarrollo">
-                <figcaption>Espacio de trabajo tecnológico y creativo</figcaption>
-            </figure>
-
-            <article>
-                <h3>Presentación Personal</h3>
-                <div
-                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-                    <iframe src="https://www.youtube.com/embed/rmGXY5rcObA" title="Video de presentación personal"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                        style="position:absolute; top:0; left:0; width:100%; height:100%;">
-                    </iframe>
-                </div>
-            </article>
-
-            <article>
-                <h3>Ubicación</h3>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.845992004757!2d-79.96257437080361!3d-2.1461794658972447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72c1c6b3d457%3A0x7d20ee36b3b3e61b!2sESPOL!5e0!3m2!1ses!2sec!4v1696532345678!5m2!1ses!2sec"
-                    width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </article>
         </section>
 
         <section id="contacto">
