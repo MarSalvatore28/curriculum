@@ -34,24 +34,24 @@ nav > ul {
 
 /* Modelo de caja para secciones */
 section {
-    /* Borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd */
+    /* grosor 0.2 en puntos con estilo ssllido y color hexadecimal #cedddd */
     border: 0.2pt solid #cedddd;
     
-    /* Margen (espacio externo) superior, derecho, abajo e izquierda */
+    /* margen */
     margin: 4px 2px 8px 2px;
     
-    /* Relleno (espacio interno) de 1.5% en la parte superior e inferior y 0.8% a los lados */
+    /* relleno del espacio interno */
     padding: 1.5% 0.8%;
     
     /* Margen inferior ajustado */
     margin-bottom: 1.2rem;
     
-    /* Borde redondeado con un radio de 5 píxeles */
+    /* Borde de 5 px */
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     
-    /* Sombra a un elemento */
+    /* sombra */
     -webkit-box-shadow: 3px 3px 1px 0px rgba(235, 234, 234, 0.60);
     -moz-box-shadow: 3px 3px 1px 0px rgba(235, 234, 234, 0.60);
     box-shadow: 3px 3px 1px 0px rgba(235, 234, 234, 0.60);
