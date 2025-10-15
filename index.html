@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículum Vitae - Marlo Carlos Valle Franco</title>
+
+    <!-- Google Fonts (opcional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
     <header>
         <h1>Marlo Carlos Valle Franco</h1>
         <figure>
-            <img src="https://placehold.co/150x150" alt="Foto de perfil de Marlo Valle">
+            <img id="photo" src="https://placehold.co/150x150" alt="Foto de perfil de Marlo Valle">
             <figcaption>Foto de perfilicito (placeholder)</figcaption>
         </figure>
         <p>Desarrollador de Software |
@@ -35,14 +41,14 @@
 
     <main>
         <section id="resumen">
-            <h2>Resumen</h2>
+            <h2 class="subtitle">Resumen</h2>
             <p>Soy un desarrollador ecuatoriano con pasión por la tecnología, el diseño y la creación de soluciones
                 inteligentes. Me especializo en el desarrollo web full stack y disfruto aprendiendo nuevas herramientas
                 y lenguajes.</p>
         </section>
 
         <section id="experiencia">
-            <h2>Experiencia</h2>
+            <h2 class="subtitle">Experiencia</h2>
             <article>
                 <h3>Desarrollador Web - Dox</h3>
                 <p>Responsable del desarrollo de sistemas en ERPNext con Docker y Node.js. He participado en proyectos
@@ -52,7 +58,7 @@
         </section>
 
         <section id="educacion">
-            <h2>Educación</h2>
+            <h2 class="subtitle">Educación</h2>
             <article>
                 <h3>Escuela Superior Politécnica del Litoral (ESPOL)</h3>
                 <p>Estudiante de Ingeniería en Ciencias Computacionales, enfocado en desarrollo de software y soluciones
@@ -61,7 +67,7 @@
         </section>
 
         <section id="habilidades">
-            <h2>Habilidades</h2>
+            <h2 class="subtitle">Habilidades</h2>
             <aside>
                 <ul>
                     <li>JavaScript / TypeScript</li>
@@ -82,7 +88,7 @@
         </section>
 
         <section id="proyectos">
-            <h2>Proyectos</h2>
+            <h2 class="subtitle">Proyectos</h2>
             <article>
                 <h3>ERPNext Customization</h3>
                 <p>Proyecto de modificación de facturación, frontend y backend de ERPNext utilizando Docker.
@@ -93,7 +99,7 @@
         </section>
 
         <section id="testimonios">
-            <h2>Testimonios</h2>
+            <h2 class="subtitle">Testimonios</h2>
 
             <article>
                 <figure>
@@ -159,24 +165,20 @@
             </table>
         </section>
 
-        <!-- Sección multimedia -->
         <section id="multimedia">
-            <h2>Multimedia</h2>
+            <h2 class="subtitle">Multimedia</h2>
 
-            <!-- Imagen placeholder -->
             <figure>
                 <img src="https://picsum.photos/800/300" alt="Imagen aleatoria de placeholder">
                 <figcaption>Vista previa de un proyecto (imagen de ejemplo)</figcaption>
             </figure>
 
-            <!-- Video de YouTube -->
             <article>
                 <h3>Presentación Personal</h3>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                     title="Video de presentación personal" frameborder="0" allowfullscreen></iframe>
             </article>
 
-            <!-- Mapa de Google Maps -->
             <article>
                 <h3>Ubicación</h3>
                 <iframe
@@ -186,16 +188,13 @@
             </article>
         </section>
 
-        <!-- Nueva sección de formulario -->
         <section id="contacto">
-            <h2>Formulario de Contacto</h2>
+            <h2 class="subtitle">Formulario de Contacto</h2>
 
             <form action="#" method="post">
-                <!-- Campo de texto -->
                 <label for="nombre">Nombre completo:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
 
-                <!-- Lista desplegable -->
                 <label for="cargo">Cargo al que postula:</label>
                 <select id="cargo" name="cargo">
                     <option value="">Seleccione una opción</option>
@@ -204,23 +203,19 @@
                     <option value="fullstack">Desarrollador Full Stack</option>
                 </select>
 
-                <!-- Selección única -->
                 <p>Disponibilidad:</p>
                 <label><input type="radio" name="disponibilidad" value="tiempo_completo"> Tiempo completo</label>
                 <label><input type="radio" name="disponibilidad" value="medio_tiempo"> Medio tiempo</label>
 
-                <!-- Selección múltiple -->
                 <p>Lenguajes que domina:</p>
                 <label><input type="checkbox" name="lenguajes" value="html"> HTML</label>
                 <label><input type="checkbox" name="lenguajes" value="css"> CSS</label>
                 <label><input type="checkbox" name="lenguajes" value="javascript"> JavaScript</label>
                 <label><input type="checkbox" name="lenguajes" value="python"> Python</label>
 
-                <!-- Área de texto -->
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba su mensaje aquí..."></textarea>
 
-                <!-- Botón de envío -->
                 <button type="submit">Enviar formulario</button>
             </form>
         </section>
