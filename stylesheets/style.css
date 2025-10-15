@@ -1,37 +1,192 @@
-/* Selector universal */
+/* Selector universal - Fuente para todos los elementos */
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Título principal */
+/* Título principal - centrado y en negritas */
 h1 {
-  text-align: center;
-  font-weight: bold;
+    text-align: center;
+    font-weight: bold;
 }
 
-/* Imagen de perfil */
+/* Imagen con id photo - ancho 8vw y alto automático */
 #photo {
-  width: 8vw;
-  height: auto;
+    width: 8vw;
+    height: auto;
 }
 
-/* Subtítulos */
+/* Subtítulos con clase subtitle - color específico y mayúsculas */
 .subtitle {
-  color: rgba(151, 156, 165, 0.89);
-  text-transform: uppercase;
+    color: rgb(151 156 165 / 0.89);
+    text-transform: uppercase;
 }
 
-/* Pie de página */
+/* Selector descendiente - párrafos dentro de footer */
 footer p {
-  text-align: right;
-  font-style: italic;
+    text-align: right;
+    font-style: italic;
 }
 
-/* Secciones */
+/* Selector de hijo inmediato - ul dentro de nav */
+nav > ul {
+    list-style: none;
+}
+
+/* Modelo de caja para secciones */
 section {
-  border: 0.2pt solid #cedddd;
-  margin: 4px 2px 8px 2px;
-  padding: 1.5% 0.8%;
-  border-radius: 5px;
-  box-shadow: 3px 3px 1px rgba(235, 234, 234, 0.6);
+    border: 0.2pt solid #cedddd;
+    margin: 4px 2px 8px 2px;
+    padding: 1.5% 0.8%;
+    margin-bottom: 1.2rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 1px 0px rgba(235, 234, 234, 0.6);
+}
+
+/* Estilos adicionales para mejorar la presentación */
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #e0e0e0;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+
+a {
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table thead {
+    background-color: #f2f2f2;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: 500;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+figure {
+    margin: 1rem 0;
+}
+
+figcaption {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #555;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 2px solid #cedddd;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
